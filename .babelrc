@@ -2,7 +2,11 @@
   "presets": [["es2015", { "loose": true }], "stage-0", "react"],
   "env": {
     "production": {
-      "presets": ["react-optimize", ["es2015", {"loose": true}], "react", "stage-0"],
+      "presets": ["react-optimize", ["es2015", {"modules": true}], "react", "stage-0"],
+      "plugins": ["transform-runtime"]
+    },
+    "production-es": {
+      "presets": ["react-optimize", ["es2015", {"modules": false}], "react", "stage-0"],
       "plugins": ["transform-runtime"]
     }
   }

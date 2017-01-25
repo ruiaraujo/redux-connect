@@ -3,12 +3,13 @@
   "version": "5.0.0",
   "description": "It allows you to request async data, store them in redux state and connect them to your react component.",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/makeomatic/redux-connect.git"
   },
   "scripts": {
-    "build": "rm -rf ./lib; NODE_ENV=production babel ./modules -d lib --ignore '__tests__'",
+    "build": "rm -rf ./lib ./es; NODE_ENV=production babel ./modules -d lib --ignore '__tests__'; NODE_ENV=production-es babel ./modules -d es --ignore '__tests__'",
     "lint": "eslint ./modules",
     "test": "npm run lint && jest",
     "prepublish": "npm run lint && npm run build"
